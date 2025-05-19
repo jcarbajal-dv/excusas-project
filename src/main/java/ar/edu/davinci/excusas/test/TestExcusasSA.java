@@ -6,10 +6,10 @@ import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
 import ar.edu.davinci.excusas.observer.ObservadorCEO;
 import ar.edu.davinci.excusas.strategy.ModoNormal;
 import ar.edu.davinci.excusas.strategy.ModoProductivo;
-import ar.edu.davinci.excusas.utils.EmailSender;
+import ar.edu.davinci.excusas.service.EmailSender;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -66,10 +66,10 @@ public class TestExcusasSA {
     public void testExcusaIrrelevanteEsRechazada() {
         Encargado recepcionista = new Recepcionista("R", "r@sa.com", 1, new ModoNormal(), dummyEmailSender);
         Encargado ceo = new CEO("C", "c@sa.com", 2, new ModoNormal(), dummyEmailSender);
-        Encargado fin = new EncargadoPorDefecto(dummyEmailSender);
+
 
         recepcionista.setSiguiente(ceo);
-        ceo.setSiguiente(fin);
+        //ceo.setSiguiente(fin);
 
         Excusa excusa = new Excusa(new Empleado("E", "e@sa.com", 106), MotivoExcusa.INVEROSIMIL);
         recepcionista.manejarExcusa(excusa);
