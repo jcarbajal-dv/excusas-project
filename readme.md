@@ -60,6 +60,9 @@ direction TB
     class EncargadoPorDefecto {
     }
 
+    class ExcusaModerada {
+    }
+
     class ExcusaLuz {
     }
 
@@ -73,9 +76,6 @@ direction TB
     }
 
     class ExcusaCompleja {
-    }
-
-    class ExcusaModerada {
     }
 
     class IProntuario {
@@ -202,10 +202,10 @@ direction TB
     Encargado <|-- CEO
     IExcusa <|.. Excusa
     Excusa <|-- TipoExcusa
+    TipoExcusa <|-- ExcusaModerada
     TipoExcusa <|-- ExcusaCompleja
     TipoExcusa <|-- ExcusaInverosimil
     TipoExcusa <|-- ExcusaTrivial
-    TipoExcusa <|-- ExcusaModerada
     ExcusaModerada <|-- ExcusaLuz
     ExcusaModerada <|-- ExcusaFamilia
     ModoEvaluacion <|-- ModoNormal
