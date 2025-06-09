@@ -212,5 +212,6 @@ direction TB
     Observer --> Prontuario
     AdministradorDeProntuario <|-- AdministradorDeProntuario
     Encargado <|.. EmailSender
-    ´´´
+   
+    ```
 
