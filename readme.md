@@ -19,7 +19,7 @@ Este proyecto intenta ser un sistema para evaluar y procesar excusas laborales d
 
 UML 
 
-´´´mermaid
+```mermaid
 classDiagram
 direction TB
     class CEO {
