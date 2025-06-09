@@ -6,8 +6,7 @@ import ar.edu.davinci.excusas.model.Excusa;
 public class ModoVago implements ModoEvaluacion {
     @Override
     public void evaluar(Encargado encargado, Excusa excusa) {
-        if (encargado.siguiente != null) {
-            encargado.siguiente.manejarExcusa(excusa);
+        encargado.pasarExcusa(excusa);
         }
     }
 }

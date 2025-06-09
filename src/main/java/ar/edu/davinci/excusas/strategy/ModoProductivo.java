@@ -2,22 +2,13 @@ package ar.edu.davinci.excusas.strategy;
 
 import ar.edu.davinci.excusas.chain.Encargado;
 import ar.edu.davinci.excusas.model.Excusa;
+import ar.edu.davinci.excusas.service.EmailSender;
 
 public class ModoProductivo implements ModoEvaluacion {
     @Override
     public void evaluar(Encargado encargado, Excusa excusa) {
-        // Siempre avisa al CTO
-        encargado.emailSender.enviarEmail(
-                "cto@excusas.sa",
-                encargado.getEmail(),
-                "Evaluación Productiva",
-                "Se evaluará una excusa: " + excusa.getMotivo()
-        );
-
-        if (encargado.puedeManejar(excusa.getMotivo())) {
-            encargado.procesar(excusa);
-        } else if (encargado.siguiente != null) {
-            encargado.siguiente.manejarExcusa(excusa);
+        new emailSender().sendEmail("cto@excusas.org", encargado.getEmail(), "idk", "Ojeen esto");
+        encargado.manejarExcusa(excusa);
         }
     }
-}
+
