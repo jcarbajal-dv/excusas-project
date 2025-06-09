@@ -136,9 +136,6 @@ direction TB
 	    +evaluar(IEncargado encargado, IExcusa excusa)
     }
 
-    class UntitledClass {
-    }
-
     class Encargado {
 	    +ModoEvaluacion: modoEvaluacion
 	    +ManejadorExcusa: siguiente
@@ -198,11 +195,11 @@ direction TB
     ManejadorExcusa <|.. Encargado
     ManejadorExcusa <|.. Rechazador
     IEncargado <|.. Encargado
-    Encargado <|-- CEO
+    Encargado <|-- SupervisorArea
     Encargado <|-- GerenteRRHH
     Encargado <|-- Recepcionista
-    Encargado <|-- SupervisorArea
     Encargado <|-- EncargadoPorDefecto
+    Encargado <|-- CEO
     IExcusa <|.. Excusa
     Excusa <|-- TipoExcusa
     TipoExcusa <|-- ExcusaCompleja
