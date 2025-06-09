@@ -69,13 +69,13 @@ direction TB
     class ExcusaTrivial {
     }
 
-    class ExcusaModerada {
-    }
-
     class ExcusaInverosimil {
     }
 
     class ExcusaCompleja {
+    }
+
+    class ExcusaModerada {
     }
 
     class IProntuario {
@@ -204,8 +204,8 @@ direction TB
     Excusa <|-- TipoExcusa
     TipoExcusa <|-- ExcusaCompleja
     TipoExcusa <|-- ExcusaInverosimil
-    TipoExcusa <|-- ExcusaModerada
     TipoExcusa <|-- ExcusaTrivial
+    TipoExcusa <|-- ExcusaModerada
     ExcusaModerada <|-- ExcusaLuz
     ExcusaModerada <|-- ExcusaFamilia
     ModoEvaluacion <|-- ModoNormal
