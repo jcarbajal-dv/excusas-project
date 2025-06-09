@@ -1,7 +1,6 @@
 package ar.edu.davinci.excusas.chain;
 
 import ar.edu.davinci.excusas.model.Excusa;
-import ar.edu.davinci.excusas.model.MotivoExcusa;
 import ar.edu.davinci.excusas.service.EmailSender;
 import ar.edu.davinci.excusas.strategy.ModoNormal;
 
@@ -24,5 +23,35 @@ public class EncargadoPorDefecto extends Encargado {
                 "Excusa rechazada",
                 "Excusa rechazada: necesitamos pruebas contundentes."
         );
+    }
+
+    @Override
+    public boolean soyEncargadoDefault() {
+        return true;
+    }
+
+    @Override
+    public boolean soyCEO() {
+        return false;
+    }
+
+    @Override
+    public boolean soyRecepcionista() {
+        return false;
+    }
+
+    @Override
+    public boolean soyGerenteRRHH() {
+        return false;
+    }
+
+    @Override
+    public boolean soySupervisorArea() {
+        return false;
+    }
+
+    @Override
+    public void pasarExcusa(Excusa excusa) {
+
     }
 }

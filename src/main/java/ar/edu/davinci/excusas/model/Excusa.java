@@ -1,8 +1,5 @@
 package ar.edu.davinci.excusas.model;
 
-import ar.edu.davinci.excusas.model.Empleado;
-import ar.edu.davinci.excusas.model.MotivoExcusa;
-
 public class Excusa{
     private Empleado empleado;
     private MotivoExcusa motivo;

@@ -1,21 +1,17 @@
 package ar.edu.davinci.excusas.chain;
 
 import ar.edu.davinci.excusas.model.Excusa;
-import ar.edu.davinci.excusas.model.MotivoExcusa;
 import ar.edu.davinci.excusas.service.EmailSender;
 import ar.edu.davinci.excusas.strategy.ModoEvaluacion;
 
-public class Recepcionista extends EncargadoBase {
+public class Recepcionista extends EncargadoBase implements ManejadorExcusas {
 
-    public Recepcionista(String nombre, String email, int legajo, ModoEvaluacion modo, EmailSender emailSender) {
+    public Recepcionista(String nombre, String email, int legajo, ManejadorExcusas siguiente) {
         super(nombre, email, legajo, modo, emailSender);
+        this.siguiente = siguiente;
     }
 
 
-    @Override
-    public boolean puedeManejar(MotivoExcusa motivo) {
-        return motivo == MotivoExcusa.QUEDARSE_DORMIDO || motivo == MotivoExcusa.PERDI_EL_TRANSPORTE;
-    }
 
     @Override
     public void procesar(Excusa excusa) {
@@ -25,5 +21,45 @@ public class Recepcionista extends EncargadoBase {
                 "Excusa aceptada",
                 "La excusa fue aceptada por el Recepcionista."
         );
+    }
+
+    @Override
+    public boolean soyCEO() {
+        return false;
+    }
+
+    @Override
+    public boolean soyRecepcionista() {
+        return true;
+    }
+
+    @Override
+    public boolean soyGerenteRRHH() {
+        return false;
+    }
+
+    @Override
+    public boolean soySupervisorArea() {
+        return false;
+    }
+
+    @Override
+    public void pasarExcusa(Excusa excusa) {
+
+    }
+
+    @Override
+    public void setSiguiente(ManejadorExcusa siguiente) {
+
+    }
+
+    @Override
+    public boolean soyEncargadoDefault() {
+        return false;
+    }
+
+    @Override
+    public boolean puedeManejar(Excusa excusa) {
+        return false;
     }
 }

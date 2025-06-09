@@ -1,7 +1,6 @@
 package ar.edu.davinci.excusas.chain;
 
 import ar.edu.davinci.excusas.model.Excusa;
-import ar.edu.davinci.excusas.model.MotivoExcusa;
 import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
 import ar.edu.davinci.excusas.model.Prontuario;
 import ar.edu.davinci.excusas.observer.ObservadorCEO;
@@ -10,8 +9,9 @@ import ar.edu.davinci.excusas.strategy.ModoEvaluacion;
 
 public class CEO extends Encargado implements ObservadorCEO {
 
-    public CEO(String nombre, String email, int legajo, ModoEvaluacion modo, EmailSender emailSender) {
-        super(nombre, email, legajo, modo, emailSender);
+    public CEO(String nombre, String email, int legajo, ManejadorExcusas siguiente) {
+        super(nombre, email, legajo);
+        this.siguiente = siguiente;
         AdministradorDeProntuarios.getInstance().registrarObservador(this);
     }
 
@@ -42,5 +42,35 @@ public class CEO extends Encargado implements ObservadorCEO {
                 "Nuevo prontuario registrado",
                 "Se ha registrado un nuevo prontuario: " + prontuario.toString()
         );
+    }
+
+    @Override
+    public boolean soyCEO() {
+        return true;
+    }
+
+    @Override
+    public boolean soyRecepcionista() {
+        return false;
+    }
+
+    @Override
+    public boolean soyGerenteRRHH() {
+        return false;
+    }
+
+    @Override
+    public boolean soySupervisorArea() {
+        return false;
+    }
+
+    @Override
+    public void pasarExcusa(Excusa excusa) {
+
+    }
+
+    @Override
+    public boolean soyEncargadoDefault() {
+        return false;
     }
 }

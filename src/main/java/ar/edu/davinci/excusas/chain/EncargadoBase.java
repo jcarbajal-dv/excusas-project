@@ -1,14 +1,14 @@
 package ar.edu.davinci.excusas.chain;
 
 import ar.edu.davinci.excusas.model.Excusa;
-import ar.edu.davinci.excusas.model.MotivoExcusa;
 import ar.edu.davinci.excusas.strategy.ModoEvaluacion;
 import ar.edu.davinci.excusas.service.EmailSender;
 
 public abstract class EncargadoBase extends Encargado {
 
-    public EncargadoBase(String nombre, String email, int legajo, ModoEvaluacion modo, EmailSender emailSender) {
-        super(nombre, email, legajo, modo, emailSender);
+    public EncargadoBase(String nombre, String email, int legajo, ManejadorExcusas siguiente) {
+        super(nombre, email, legajo);
+        this.siguiente = siguiente;
     }
 
     @Override

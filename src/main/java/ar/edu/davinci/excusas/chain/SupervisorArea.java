@@ -1,7 +1,6 @@
 package ar.edu.davinci.excusas.chain;
 
 import ar.edu.davinci.excusas.model.Excusa;
-import ar.edu.davinci.excusas.model.MotivoExcusa;
 import ar.edu.davinci.excusas.service.EmailSender;
 import ar.edu.davinci.excusas.strategy.ModoEvaluacion;
 
@@ -12,20 +11,31 @@ public class SupervisorArea extends Encargado {
         super(nombre, email, legajo, modo, emailSender);
     }
 
-    @Override
-    public boolean puedeManejar(MotivoExcusa motivo) {
-        return motivo == MotivoExcusa.CORTE_LUZ || motivo == MotivoExcusa.CUIDADO_FAMILIAR;
+    public void actuar(Excusa excusa) {
     }
 
+    @Override
+    public boolean soyCEO() {
+        return false;
+    }
 
     @Override
-    public void procesar(Excusa excusa) {
-        if (excusa.getMotivo() == MotivoExcusa.CORTE_LUZ) {
-            emailSender.enviarEmail("EDESUR@mailfake.com.ar", this.getEmail(),
-                    "Consulta corte de luz", "¿Hubo un corte de luz en el barrio?");
-        } else if (excusa.getMotivo() == MotivoExcusa.CUIDADO_FAMILIAR) {
-            emailSender.enviarEmail(excusa.getEmpleado().getEmail(), this.getEmail(),
-                    "Situación familiar", "¿Está todo bien?");
-        }
+    public boolean soyRecepcionista() {
+        return false;
+    }
+
+    @Override
+    public boolean soyGerenteRRHH() {
+        return false;
+    }
+
+    @Override
+    public boolean soySupervisorArea() {
+        return true;
+    }
+
+    @Override
+    public void pasarExcusa(Excusa excusa) {
+
     }
 }
