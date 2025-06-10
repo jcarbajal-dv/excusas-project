@@ -1,6 +1,6 @@
-package ar.edu.davinci.excusas.observer;
+package ar.edu.davinci.excusas.observer.interfaces;
 
-import ar.edu.davinci.excusas.model.Prontuario;
+import ar.edu.davinci.excusas.prontuario.Prontuario;
 
 public interface Observable {
     void registrarObservador(ObservadorCEO observador);

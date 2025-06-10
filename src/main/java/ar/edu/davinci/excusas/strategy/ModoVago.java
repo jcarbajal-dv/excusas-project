@@ -1,12 +1,12 @@
 package ar.edu.davinci.excusas.strategy;
 
-import ar.edu.davinci.excusas.chain.Encargado;
-import ar.edu.davinci.excusas.model.Excusa;
+import ar.edu.davinci.excusas.encargado.Encargado;
+import ar.edu.davinci.excusas.excusa.Excusa;
 
-public class ModoVago implements ModoEvaluacion {
+public class ModoVago implements ModoAccion {
     @Override
-    public void evaluar(Encargado encargado, Excusa excusa) {
+    public void actuar(Encargado encargado, Excusa excusa) {
         encargado.pasarExcusa(excusa);
         }
     }
-}
+

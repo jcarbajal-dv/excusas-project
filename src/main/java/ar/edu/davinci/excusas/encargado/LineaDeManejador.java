@@ -1,4 +1,4 @@
-package ar.edu.davinci.excusas.chain;
+package ar.edu.davinci.excusas.encargado;
 
 public class LineaDeManejador {
 

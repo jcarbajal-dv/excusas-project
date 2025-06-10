@@ -1,6 +1,8 @@
 package ar.edu.davinci.excusas.observer;
 
-import ar.edu.davinci.excusas.model.Prontuario;
+import ar.edu.davinci.excusas.observer.interfaces.Observable;
+import ar.edu.davinci.excusas.observer.interfaces.ObservadorCEO;
+import ar.edu.davinci.excusas.prontuario.Prontuario;
 
 import java.util.ArrayList;
 import java.util.List;

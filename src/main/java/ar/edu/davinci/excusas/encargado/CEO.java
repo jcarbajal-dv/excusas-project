@@ -1,42 +1,37 @@
-package ar.edu.davinci.excusas.chain;
+package ar.edu.davinci.excusas.encargado;
 
-import ar.edu.davinci.excusas.model.Excusa;
+import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
+import ar.edu.davinci.excusas.excusa.Excusa;
 import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
-import ar.edu.davinci.excusas.model.Prontuario;
-import ar.edu.davinci.excusas.observer.ObservadorCEO;
+import ar.edu.davinci.excusas.prontuario.Prontuario;
+import ar.edu.davinci.excusas.observer.interfaces.ObservadorCEO;
 import ar.edu.davinci.excusas.service.EmailSender;
-import ar.edu.davinci.excusas.strategy.ModoEvaluacion;
 
 public class CEO extends Encargado implements ObservadorCEO {
 
-    public CEO(String nombre, String email, int legajo, ManejadorExcusas siguiente) {
+    public CEO(String nombre, String email, int legajo, ManejadorExcusa siguiente) {
         super(nombre, email, legajo);
         this.siguiente = siguiente;
         AdministradorDeProntuarios.getInstance().registrarObservador(this);
     }
 
-    @Override
-    public boolean puedeManejar(MotivoExcusa motivo) {
-        return motivo == MotivoExcusa.INVEROSIMIL;
-    }
-
 
     @Override
-    public void procesar(Excusa excusa) {
-        emailSender.enviarEmail(
+    public void procesarExcusa(Excusa excusa) {
+        new EmailSender().enviarEmail(
                 excusa.getEmpleado().getEmail(),
                 this.getEmail(),
                 "Aprobado por creatividad",
                 "Excusa aceptada por originalidad."
         );
 
-        Prontuario prontuario = new Prontuario(excusa.getEmpleado(), excusa.getMotivo(), excusa.getEmpleado().getLegajo());
+        Prontuario prontuario = new Prontuario(excusa.getEmpleado(), this, excusa);
         AdministradorDeProntuarios.getInstance().agregarProntuario(prontuario);
     }
 
     @Override
     public void notificar(Prontuario prontuario) {
-        emailSender.enviarEmail(
+        new EmailSender().enviarEmail(
                 this.getEmail(),
                 "admin@excusas.sa",
                 "Nuevo prontuario registrado",
@@ -69,8 +64,4 @@ public class CEO extends Encargado implements ObservadorCEO {
 
     }
 
-    @Override
-    public boolean soyEncargadoDefault() {
-        return false;
-    }
 }

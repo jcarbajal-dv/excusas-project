@@ -1,17 +1,17 @@
 package ar.edu.davinci.excusas.test;
 
-import ar.edu.davinci.excusas.chain.*;
-import ar.edu.davinci.excusas.model.Empleado;
-import ar.edu.davinci.excusas.model.Excusa;
+import ar.edu.davinci.excusas.encargado.*;
+import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
+import ar.edu.davinci.excusas.excusa.Excusa;
 import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
-import ar.edu.davinci.excusas.service.EmailSenderReal;
+import ar.edu.davinci.excusas.service.EmailSender;
 import ar.edu.davinci.excusas.strategy.ModoNormal;
 import ar.edu.davinci.excusas.strategy.ModoProductivo;
 
 public class test {
     public static void main(String[] args) {
 
-        EmailSenderReal emailSender = new EmailSenderReal();
+        EmailSender emailSender = new EmailSender();
 
 
         Recepcionista recepcionista = new Recepcionista("Ana", "ana@excusas.sa", 1, new ModoNormal(), emailSender);
@@ -29,22 +29,21 @@ public class test {
         recepcionista.setSiguiente(supervisor);
         supervisor.setSiguiente(gerente);
         gerente.setSiguiente(ceo1);
-        ceo1.setSiguiente(encargadoPorDefecto);
 
 
-        Empleado e1 = new Empleado("Juan Pérez", "juan@mail.com", 100);
+        ManejadorExcusa.Empleado e1 = new ManejadorExcusa.Empleado("Juan Pérez", "juan@mail.com", 100);
         Excusa excusa1 = new Excusa(e1, MotivoExcusa.QUEDARSE_DORMIDO);
 
-        Empleado e2 = new Empleado("Lucía García", "lucia@mail.com", 101);
+        ManejadorExcusa.Empleado e2 = new ManejadorExcusa.Empleado("Lucía García", "lucia@mail.com", 101);
         Excusa excusa2 = new Excusa(e2, MotivoExcusa.CUIDADO_FAMILIAR);
 
-        Empleado e3 = new Empleado("Carlos Díaz", "carlos@mail.com", 102);
+        ManejadorExcusa.Empleado e3 = new ManejadorExcusa.Empleado("Carlos Díaz", "carlos@mail.com", 102);
         Excusa excusa3 = new Excusa(e3, MotivoExcusa.COMPLEJO);
 
-        Empleado e4 = new Empleado("Sofía Méndez", "sofia@mail.com", 103);
+        ManejadorExcusa.Empleado e4 = new ManejadorExcusa.Empleado("Sofía Méndez", "sofia@mail.com", 103);
         Excusa excusa4 = new Excusa(e4, MotivoExcusa.INVEROSIMIL);
 
-        Empleado e5 = new Empleado("Tobi", "tobi@mail.com", 104);
+        ManejadorExcusa.Empleado e5 = new ManejadorExcusa.Empleado("Tobi", "tobi@mail.com", 104);
         Excusa excusa5 = new Excusa(e5, MotivoExcusa.INVEROSIMIL);
 
 

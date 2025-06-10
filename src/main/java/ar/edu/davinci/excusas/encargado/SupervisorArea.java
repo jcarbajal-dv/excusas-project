@@ -1,18 +1,17 @@
-package ar.edu.davinci.excusas.chain;
+package ar.edu.davinci.excusas.encargado;
 
-import ar.edu.davinci.excusas.model.Excusa;
+import ar.edu.davinci.excusas.excusa.Excusa;
 import ar.edu.davinci.excusas.service.EmailSender;
-import ar.edu.davinci.excusas.strategy.ModoEvaluacion;
+import ar.edu.davinci.excusas.strategy.ModoAccion;
+
 
 public class SupervisorArea extends Encargado {
 
 
-    public SupervisorArea(String nombre, String email, int legajo, ModoEvaluacion modo, EmailSender emailSender) {
-        super(nombre, email, legajo, modo, emailSender);
+    public SupervisorArea(String nombre, String email, int legajo) {
+        super(nombre, email, legajo);
     }
 
-    public void actuar(Excusa excusa) {
-    }
 
     @Override
     public boolean soyCEO() {
@@ -34,8 +33,4 @@ public class SupervisorArea extends Encargado {
         return true;
     }
 
-    @Override
-    public void pasarExcusa(Excusa excusa) {
-
-    }
 }

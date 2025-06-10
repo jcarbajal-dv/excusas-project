@@ -1,12 +1,11 @@
 package ar.edu.davinci.excusas.test;
 
-import ar.edu.davinci.excusas.chain.*;
-import ar.edu.davinci.excusas.model.*;
+import ar.edu.davinci.excusas.encargado.*;
+import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
+import ar.edu.davinci.excusas.excusa.Excusa;
 import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
-import ar.edu.davinci.excusas.observer.ObservadorCEO;
 import ar.edu.davinci.excusas.strategy.ModoNormal;
 import ar.edu.davinci.excusas.strategy.ModoProductivo;
-import ar.edu.davinci.excusas.service.EmailSender;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -29,7 +28,7 @@ public class TestExcusasSA {
     public void testRecepcionistaAceptaExcusaTrivial() {
         Encargado recepcionista = new Recepcionista("Recepcionista", "rec@sa.com", 1, new ModoNormal(), dummyEmailSender);
 
-        Empleado e = new Empleado("Empleado A", "a@sa.com", 101);
+        ManejadorExcusa.Empleado e = new ManejadorExcusa.Empleado("Empleado A", "a@sa.com", 101);
         Excusa excusa = new Excusa(e, MotivoExcusa.QUEDARSE_DORMIDO);
 
         recepcionista.manejarExcusa(excusa);
@@ -43,7 +42,7 @@ public class TestExcusasSA {
 
         recepcionista.setSiguiente(supervisor);
 
-        Empleado e = new Empleado("Empleado B", "b@sa.com", 102);
+        ManejadorExcusa.Empleado e = new ManejadorExcusa.Empleado("Empleado B", "b@sa.com", 102);
         Excusa excusa = new Excusa(e, MotivoExcusa.CUIDADO_FAMILIAR);
 
         recepcionista.manejarExcusa(excusa);
@@ -56,7 +55,7 @@ public class TestExcusasSA {
         CEO ceo = new CEO("CEO1", "ceo1@sa.com", 4, new ModoNormal(), dummyEmailSender);
         AdministradorDeProntuarios.getInstance().registrarObservador(prontuario -> notificado.set(true));
 
-        Excusa excusa = new Excusa(new Empleado("E", "e@sa.com", 105), MotivoExcusa.INVEROSIMIL);
+        Excusa excusa = new Excusa(new ManejadorExcusa.Empleado("E", "e@sa.com", 105), MotivoExcusa.INVEROSIMIL);
         ceo.manejarExcusa(excusa);
 
         assertTrue(notificado.get(), "Se esperaba notificación a observadores de CEO");
@@ -71,7 +70,7 @@ public class TestExcusasSA {
         recepcionista.setSiguiente(ceo);
         //ceo.setSiguiente(fin);
 
-        Excusa excusa = new Excusa(new Empleado("E", "e@sa.com", 106), MotivoExcusa.INVEROSIMIL);
+        Excusa excusa = new Excusa(new ManejadorExcusa.Empleado("E", "e@sa.com", 106), MotivoExcusa.INVEROSIMIL);
         recepcionista.manejarExcusa(excusa);
     }
 
@@ -82,7 +81,7 @@ public class TestExcusasSA {
             assertTrue(as.contains("productividad"));
         });
 
-        Excusa excusa = new Excusa(new Empleado("Emp", "emp@sa.com", 107), MotivoExcusa.CUIDADO_FAMILIAR);
+        Excusa excusa = new Excusa(new ManejadorExcusa.Empleado("Emp", "emp@sa.com", 107), MotivoExcusa.CUIDADO_FAMILIAR);
         supervisor.manejarExcusa(excusa);
     }
 }
