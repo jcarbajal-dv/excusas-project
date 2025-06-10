@@ -1,12 +1,12 @@
 package ar.edu.davinci.excusas.test;
 
-import ar.edu.davinci.excusas.encargado.*;
-import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
+import ar.edu.davinci.excusas.empleado.*;
+import ar.edu.davinci.excusas.empleado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
 import ar.edu.davinci.excusas.prontuario.AdministradorDeProntuarios;
-import ar.edu.davinci.excusas.encargado.EmailSender;
-import ar.edu.davinci.excusas.modoaccion.ModoNormal;
-import ar.edu.davinci.excusas.modoaccion.ModoProductivo;
+import ar.edu.davinci.excusas.empleado.EmailSender;
+import ar.edu.davinci.excusas.empleado.modoaccion.ModoNormal;
+import ar.edu.davinci.excusas.empleado.modoaccion.ModoProductivo;
 
 public class test {
     public static void main(String[] args) {

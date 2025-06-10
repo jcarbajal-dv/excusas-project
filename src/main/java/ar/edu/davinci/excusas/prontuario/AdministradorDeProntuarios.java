@@ -22,7 +22,7 @@ public class AdministradorDeProntuarios implements Observable {
 
     public void agregarProntuario(Prontuario prontuario) {
         prontuarios.add(prontuario);
-        notificarObservadores(prontuario);
+        this.notificarObservadores(prontuario);
     }
 
     @Override

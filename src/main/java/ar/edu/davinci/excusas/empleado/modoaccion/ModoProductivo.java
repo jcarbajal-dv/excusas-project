@@ -1,8 +1,8 @@
-package ar.edu.davinci.excusas.modoaccion;
+package ar.edu.davinci.excusas.empleado.modoaccion;
 
-import ar.edu.davinci.excusas.encargado.Encargado;
+import ar.edu.davinci.excusas.empleado.Encargado;
 import ar.edu.davinci.excusas.excusa.Excusa;
-import ar.edu.davinci.excusas.encargado.EmailSender;
+import ar.edu.davinci.excusas.empleado.EmailSender;
 
 public class ModoProductivo implements ModoAccion {
     @Override

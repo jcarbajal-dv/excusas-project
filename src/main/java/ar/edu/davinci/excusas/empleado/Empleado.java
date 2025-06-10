@@ -1,7 +1,7 @@
-package ar.edu.davinci.excusas.encargado;
+package ar.edu.davinci.excusas.empleado;
 
 
-import ar.edu.davinci.excusas.encargado.interfaces.IEmpleado;
+import ar.edu.davinci.excusas.empleado.interfaces.IEmpleado;
 import ar.edu.davinci.excusas.excusa.Excusa;
 import ar.edu.davinci.excusas.excusa.TipoExcusa;
 

@@ -1,4 +1,4 @@
-package ar.edu.davinci.excusas.encargado;
+package ar.edu.davinci.excusas.empleado;
 
 
 public class Recepcionista extends Encargado {

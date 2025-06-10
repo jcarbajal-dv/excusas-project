@@ -1,12 +1,12 @@
-package ar.edu.davinci.excusas.encargado;
+package ar.edu.davinci.excusas.empleado;
 
-import ar.edu.davinci.excusas.encargado.interfaces.IEncargado;
-import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
+import ar.edu.davinci.excusas.empleado.interfaces.IEncargado;
+import ar.edu.davinci.excusas.empleado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
-import ar.edu.davinci.excusas.modoaccion.ModoAccion;
-import ar.edu.davinci.excusas.modoaccion.ModoNormal;
-import ar.edu.davinci.excusas.modoaccion.ModoProductivo;
-import ar.edu.davinci.excusas.modoaccion.ModoVago;
+import ar.edu.davinci.excusas.empleado.modoaccion.ModoAccion;
+import ar.edu.davinci.excusas.empleado.modoaccion.ModoNormal;
+import ar.edu.davinci.excusas.empleado.modoaccion.ModoProductivo;
+import ar.edu.davinci.excusas.empleado.modoaccion.ModoVago;
 
 public abstract class Encargado extends Empleado implements ManejadorExcusa, IEncargado {
 

@@ -1,7 +1,7 @@
 package ar.edu.davinci.excusas.excusa.interfaces;
 
-import ar.edu.davinci.excusas.encargado.Encargado;
-import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
+import ar.edu.davinci.excusas.empleado.Encargado;
+import ar.edu.davinci.excusas.empleado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
 
 public interface ITipoExcusa {

@@ -1,6 +1,6 @@
-package ar.edu.davinci.excusas.modoaccion;
+package ar.edu.davinci.excusas.empleado.modoaccion;
 
-import ar.edu.davinci.excusas.encargado.Encargado;
+import ar.edu.davinci.excusas.empleado.Encargado;
 import ar.edu.davinci.excusas.excusa.Excusa;
 
 public class ModoVago implements ModoAccion {
