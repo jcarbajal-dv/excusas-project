@@ -30,7 +30,7 @@ Este proyecto intenta ser un sistema para evaluar y procesar excusas laborales d
 
 
 
-UML 
+## Diagrama de Clases
 
 ```mermaid
 classDiagram
