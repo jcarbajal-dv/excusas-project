@@ -5,16 +5,23 @@ Este proyecto intenta ser un sistema para evaluar y procesar excusas laborales d
 ## El Sistema implementa los siguientes patrones de diseño:
 
 -**Chain of Responsibility**: para la delegación de tareas entre los diferentes encargados.
+
 -**Strategy**: para aplicar distintos modos de evaluación del encargado (ModoNormal, ModoProductivo, ModoVago)
+
 -**Observer**: los CEOs son notificados automáticamente cuando se crea un nuevo prontuario.
+
 -**Singleton**: "AdministradorDeProntuarios" centraliza el registro de excusas procesadas, evitando que se instancie más de una vez.
 
 ## Actores
 
 -**Empleado**: Genera excusas.
+
 -**Encargados**: procesan las excusas según su tipo y nivel jerárquico.
+
 -**Rechazador**: última instancia que rechaza la excusa si naide más la procesó.
+
 -**AdministradorDeProntuarios**: No es un actor como tal, pero guarda los registros de las excusas aceptadas.
+
 -**CEOs**: observers del sistema, notificando ante nuevos prontuarios.
 
 UML 
@@ -22,18 +29,19 @@ UML
 ```mermaid
 classDiagram
 direction TB
-    class CEO {
+
+    class SupervisorArea {
     }
 
     class Recepcionista {
     }
 
-    class SupervisorArea {
-    }
-
     class GerenteRRHH {
     }
 
+    class CEO {
+    }
+    
     class ModoNormal {
     }
 
@@ -52,6 +60,9 @@ direction TB
     class EncargadoPorDefecto {
     }
 
+    class ExcusaModerada {
+    }
+
     class ExcusaLuz {
     }
 
@@ -59,9 +70,6 @@ direction TB
     }
 
     class ExcusaTrivial {
-    }
-
-    class ExcusaModerada {
     }
 
     class ExcusaInverosimil {
@@ -128,9 +136,6 @@ direction TB
 	    +evaluar(IEncargado encargado, IExcusa excusa)
     }
 
-    class UntitledClass {
-    }
-
     class Encargado {
 	    +ModoEvaluacion: modoEvaluacion
 	    +ManejadorExcusa: siguiente
@@ -190,16 +195,16 @@ direction TB
     ManejadorExcusa <|.. Encargado
     ManejadorExcusa <|.. Rechazador
     IEncargado <|.. Encargado
-    Encargado <|-- CEO
+    Encargado <|-- SupervisorArea
     Encargado <|-- GerenteRRHH
     Encargado <|-- Recepcionista
-    Encargado <|-- SupervisorArea
     Encargado <|-- EncargadoPorDefecto
+    Encargado <|-- CEO
     IExcusa <|.. Excusa
     Excusa <|-- TipoExcusa
+    TipoExcusa <|-- ExcusaModerada
     TipoExcusa <|-- ExcusaCompleja
     TipoExcusa <|-- ExcusaInverosimil
-    TipoExcusa <|-- ExcusaModerada
     TipoExcusa <|-- ExcusaTrivial
     ExcusaModerada <|-- ExcusaLuz
     ExcusaModerada <|-- ExcusaFamilia
