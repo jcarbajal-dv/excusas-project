@@ -30,6 +30,7 @@ public class Empleado implements IEmpleado {
     @Override
     public Excusa presentarExcusa(String razon, TipoExcusa tipoExcusa) {
         Excusa excusa = new Excusa(this, razon, tipoExcusa);
+        LineaDeManejador.manejarExcusa(excusa);
         return excusa;
     }
 }

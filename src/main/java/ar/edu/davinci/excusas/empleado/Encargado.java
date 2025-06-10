@@ -30,14 +30,9 @@ public abstract class Encargado extends Empleado implements ManejadorExcusa, IEn
     }
 
     @Override
-    public ModoAccion getModoAccion(){
-        return this.modoAccion;
-    }
-
-    @Override
     public void manejarExcusa(Excusa excusa) {
         if(puedeManejar(excusa)) {
-            modoAccion.actuar(this, excusa);
+            this.modoAccion.actuar(this, excusa);
         }else{
             pasarExcusa(excusa);
         }
