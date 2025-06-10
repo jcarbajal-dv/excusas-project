@@ -24,7 +24,13 @@ Este proyecto intenta ser un sistema para evaluar y procesar excusas laborales d
 
 -**CEOs**: observers del sistema, notificando ante nuevos prontuarios.
 
-UML 
+## Casos De Uso
+
+[Casos de Uso](//www.plantuml.com/plantuml/png/XL9HRkem4FptAVRpyG47U4A8w3q4FwKez0B6NjAL73korn4zLu_GYtKfYPg88BuIpyvCPh9U9zQHS-qK4pk48oN6MeD5s69Y-lhqr_VDnUIaat9uPk00aQft1aiH3LFmIcd38SAcRXng6xfZYGOR8tCnrHrsp0t6bbA8HSGUt694prYMkrs7_DkyAgLwFvZFL_3d4349JSSkpapTGpVcxG0cU2Rq22-1gGtm0M_KX9bIes2TfDKk3wp7EQSvWzZJ16anFL1g3FN1YyQHqL42IscBS2EPwnfc3oI760ocWVSqxJywh0JK3X9LcQx10RtHiT8sF5Bj0zFv9r69AJiMAkX-pQBwRLXaIomyYUDPV2WCwfTew4GHUZlJtwjznbPtduIYYU6ahLIOMknYyNIny1UMI_B6POkhrLqbiNZs8peFl31wEsqntNKiMyiZr-uR)
+
+
+
+## Diagrama de Clases
 
 ```mermaid
 classDiagram
@@ -55,9 +61,6 @@ direction TB
     }
 
     class Observer {
-    }
-
-    class EncargadoPorDefecto {
     }
 
     class ExcusaModerada {
@@ -198,7 +201,6 @@ direction TB
     Encargado <|-- SupervisorArea
     Encargado <|-- GerenteRRHH
     Encargado <|-- Recepcionista
-    Encargado <|-- EncargadoPorDefecto
     Encargado <|-- CEO
     IExcusa <|.. Excusa
     Excusa <|-- TipoExcusa
