@@ -8,9 +8,6 @@ import java.util.List;
 
 public class AdministradorDeProntuarios implements Observable {
     private static AdministradorDeProntuarios instancia;
-    private List<Prontuario> prontuarios = new ArrayList<>();
-    private List<ObservadorCEO> observadores = new ArrayList<>();
-
     private AdministradorDeProntuarios() {}
 
     public static AdministradorDeProntuarios getInstance() {
@@ -21,7 +18,7 @@ public class AdministradorDeProntuarios implements Observable {
     }
 
     public void agregarProntuario(Prontuario prontuario) {
-        prontuarios.add(prontuario);
+        this.prontuarios.add(prontuario);
         this.notificarObservadores(prontuario);
     }
 
