@@ -1,4 +1,4 @@
-package ar.edu.davinci.excusas.observer.interfaces;
+package ar.edu.davinci.excusas.prontuario.interfaces;
 
 import ar.edu.davinci.excusas.prontuario.Prontuario;
 

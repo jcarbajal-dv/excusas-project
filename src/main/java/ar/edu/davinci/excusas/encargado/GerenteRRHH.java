@@ -11,26 +11,12 @@ public class GerenteRRHH extends Encargado {
         this.siguiente = siguiente;
     }
 
-
-    @Override
-    public boolean soyCEO() {
-        return false;
-    }
-
-    @Override
-    public boolean soyRecepcionista() {
-        return false;
-    }
-
     @Override
     public boolean soyGerenteRRHH() {
         return true;
     }
 
-    @Override
-    public boolean soySupervisorArea() {
-        return false;
-    }
+
 
 
 

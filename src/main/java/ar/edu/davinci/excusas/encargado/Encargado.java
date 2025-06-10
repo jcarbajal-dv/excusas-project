@@ -1,14 +1,14 @@
 package ar.edu.davinci.excusas.encargado;
 
-import ar.edu.davinci.excusas.empleado.Empleado;
+import ar.edu.davinci.excusas.encargado.interfaces.IEncargado;
 import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
-import ar.edu.davinci.excusas.strategy.ModoAccion;
-import ar.edu.davinci.excusas.strategy.ModoNormal;
-import ar.edu.davinci.excusas.strategy.ModoProductivo;
-import ar.edu.davinci.excusas.strategy.ModoVago;
+import ar.edu.davinci.excusas.modoaccion.ModoAccion;
+import ar.edu.davinci.excusas.modoaccion.ModoNormal;
+import ar.edu.davinci.excusas.modoaccion.ModoProductivo;
+import ar.edu.davinci.excusas.modoaccion.ModoVago;
 
-public abstract class Encargado extends Empleado implements ManejadorExcusa, ManejadorExcusa.IEncargado {
+public abstract class Encargado extends Empleado implements ManejadorExcusa, IEncargado {
 
     public ManejadorExcusa siguiente;
     protected ModoAccion modoAccion;
@@ -66,6 +66,26 @@ public abstract class Encargado extends Empleado implements ManejadorExcusa, Man
     @Override
     public void modoVago(){
         this.modoAccion = new ModoVago();
+    }
+
+    @Override
+    public boolean soyCEO() {
+        return false;
+    }
+
+    @Override
+    public boolean soyRecepcionista() {
+        return false;
+    }
+
+    @Override
+    public boolean soyGerenteRRHH() {
+        return false;
+    }
+
+    @Override
+    public boolean soySupervisorArea() {
+        return false;
     }
 
 }

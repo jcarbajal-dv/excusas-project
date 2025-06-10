@@ -1,6 +1,6 @@
 package ar.edu.davinci.excusas.excusa;
 
-import ar.edu.davinci.excusas.empleado.Empleado;
+import ar.edu.davinci.excusas.encargado.Empleado;
 import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
 
 public class Excusa {

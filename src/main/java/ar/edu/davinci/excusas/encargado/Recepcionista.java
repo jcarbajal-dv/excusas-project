@@ -8,24 +8,8 @@ public class Recepcionista extends Encargado {
     }
 
     @Override
-    public boolean soyCEO() {
-        return false;
-    }
-
-    @Override
     public boolean soyRecepcionista() {
         return true;
     }
-
-    @Override
-    public boolean soyGerenteRRHH() {
-        return false;
-    }
-
-    @Override
-    public boolean soySupervisorArea() {
-        return false;
-    }
-
 
 }

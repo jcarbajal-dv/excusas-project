@@ -2,10 +2,9 @@ package ar.edu.davinci.excusas.encargado;
 
 import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
-import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
+import ar.edu.davinci.excusas.prontuario.AdministradorDeProntuarios;
 import ar.edu.davinci.excusas.prontuario.Prontuario;
-import ar.edu.davinci.excusas.observer.interfaces.ObservadorCEO;
-import ar.edu.davinci.excusas.service.EmailSender;
+import ar.edu.davinci.excusas.prontuario.interfaces.ObservadorCEO;
 
 public class CEO extends Encargado implements ObservadorCEO {
 
@@ -42,21 +41,6 @@ public class CEO extends Encargado implements ObservadorCEO {
     @Override
     public boolean soyCEO() {
         return true;
-    }
-
-    @Override
-    public boolean soyRecepcionista() {
-        return false;
-    }
-
-    @Override
-    public boolean soyGerenteRRHH() {
-        return false;
-    }
-
-    @Override
-    public boolean soySupervisorArea() {
-        return false;
     }
 
     @Override

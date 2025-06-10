@@ -15,20 +15,4 @@ public class Rechazador extends Encargado{
 
     }
 
-    public boolean soyCEO(){
-        return false;
-    }
-
-    public boolean soyRecepcionista(){
-        return false;
-    }
-
-    public boolean soyGerenteRRHH(){
-        return false;
-    }
-
-    public boolean soySupervisorArea(){
-        return false;
-    }
-
 }

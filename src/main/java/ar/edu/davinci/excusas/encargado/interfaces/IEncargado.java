@@ -1,6 +1,6 @@
 package ar.edu.davinci.excusas.encargado.interfaces;
 
-import ar.edu.davinci.excusas.strategy.ModoAccion;
+import ar.edu.davinci.excusas.modoaccion.ModoAccion;
 
 public interface IEncargado {
 

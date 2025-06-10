@@ -1,8 +1,7 @@
-package ar.edu.davinci.excusas.observer;
+package ar.edu.davinci.excusas.prontuario;
 
-import ar.edu.davinci.excusas.observer.interfaces.Observable;
-import ar.edu.davinci.excusas.observer.interfaces.ObservadorCEO;
-import ar.edu.davinci.excusas.prontuario.Prontuario;
+import ar.edu.davinci.excusas.prontuario.interfaces.Observable;
+import ar.edu.davinci.excusas.prontuario.interfaces.ObservadorCEO;
 
 import java.util.ArrayList;
 import java.util.List;

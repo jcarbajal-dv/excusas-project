@@ -1,4 +1,4 @@
-package ar.edu.davinci.excusas.service;
+package ar.edu.davinci.excusas.encargado;
 
 public class EmailSender {
 

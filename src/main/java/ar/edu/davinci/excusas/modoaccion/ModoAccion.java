@@ -1,4 +1,4 @@
-package ar.edu.davinci.excusas.strategy;
+package ar.edu.davinci.excusas.modoaccion;
 
 import ar.edu.davinci.excusas.encargado.Encargado;
 import ar.edu.davinci.excusas.excusa.Excusa;

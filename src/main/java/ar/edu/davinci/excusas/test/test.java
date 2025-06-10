@@ -3,10 +3,10 @@ package ar.edu.davinci.excusas.test;
 import ar.edu.davinci.excusas.encargado.*;
 import ar.edu.davinci.excusas.encargado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
-import ar.edu.davinci.excusas.observer.AdministradorDeProntuarios;
-import ar.edu.davinci.excusas.service.EmailSender;
-import ar.edu.davinci.excusas.strategy.ModoNormal;
-import ar.edu.davinci.excusas.strategy.ModoProductivo;
+import ar.edu.davinci.excusas.prontuario.AdministradorDeProntuarios;
+import ar.edu.davinci.excusas.encargado.EmailSender;
+import ar.edu.davinci.excusas.modoaccion.ModoNormal;
+import ar.edu.davinci.excusas.modoaccion.ModoProductivo;
 
 public class test {
     public static void main(String[] args) {
