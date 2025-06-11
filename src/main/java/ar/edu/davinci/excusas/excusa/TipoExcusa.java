@@ -16,4 +16,5 @@ public class TipoExcusa implements ITipoExcusa {
     public boolean puedeSerManejadaPor(ManejadorExcusa manejadorExcusa) {
         return false;
     }
+
 }

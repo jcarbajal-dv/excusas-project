@@ -8,4 +8,6 @@ public class ExcusaTrivial extends TipoExcusa {
     public boolean puedeSerManejadaPor(ManejadorExcusa manejadorExcusa){
         return manejadorExcusa.soyRecepcionista();
     }
+
+
 }

@@ -10,4 +10,5 @@ public interface ITipoExcusa {
 
     public boolean puedeSerManejadaPor(ManejadorExcusa manejadorExcusa);
 
+
 }
