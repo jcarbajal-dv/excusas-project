@@ -8,6 +8,8 @@ import ar.edu.davinci.excusas.prontuario.interfaces.ObservadorCEO;
 
 public class CEO extends Encargado implements ObservadorCEO {
 
+    ManejadorExcusa siguiente;
+
     public CEO(String nombre, String email, int legajo, ManejadorExcusa siguiente) {
         super(nombre, email, legajo);
         this.siguiente = siguiente;
