@@ -3,24 +3,18 @@ package ar.edu.davinci.excusas.prontuario;
 import ar.edu.davinci.excusas.prontuario.interfaces.Observable;
 import ar.edu.davinci.excusas.prontuario.interfaces.ObservadorCEO;
 
-import java.util.ArrayList;
-import java.util.List;
+public class AdministradorDeProntuario implements Observable {
+    private static AdministradorDeProntuario instancia;
+    private AdministradorDeProntuario() {}
 
-public class AdministradorDeProntuarios implements Observable {
-    private static AdministradorDeProntuarios instancia;
-    private AdministradorDeProntuarios() {}
-
-    public static AdministradorDeProntuarios getInstance() {
+    public static AdministradorDeProntuario getInstance() {
         if (instancia == null) {
-            instancia = new AdministradorDeProntuarios();
+            instancia = new AdministradorDeProntuario();
         }
         return instancia;
     }
 
-    public void agregarProntuario(Prontuario prontuario) {
-        this.prontuarios.add(prontuario);
-        this.notificarObservadores(prontuario);
-    }
+
 
     @Override
     public void registrarObservador(ObservadorCEO observador) {

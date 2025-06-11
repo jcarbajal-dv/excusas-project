@@ -13,13 +13,15 @@ public class ProntuarioObservable implements Observable {
 
     @Override
     public void registrarObservador(ObservadorCEO observador) {
-
+            this.prontuarios.add(observador);
+            this.notificarObservadores(prontuarios);
     }
 
     @Override
     public void eliminarObservador(ObservadorCEO observador) {
 
     }
+
 
     @Override
     public void notificarObservadores(Prontuario prontuario) {

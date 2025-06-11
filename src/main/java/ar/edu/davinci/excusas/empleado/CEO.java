@@ -2,7 +2,7 @@ package ar.edu.davinci.excusas.empleado;
 
 import ar.edu.davinci.excusas.empleado.interfaces.ManejadorExcusa;
 import ar.edu.davinci.excusas.excusa.Excusa;
-import ar.edu.davinci.excusas.prontuario.AdministradorDeProntuarios;
+import ar.edu.davinci.excusas.prontuario.AdministradorDeProntuario;
 import ar.edu.davinci.excusas.prontuario.Prontuario;
 import ar.edu.davinci.excusas.prontuario.interfaces.ObservadorCEO;
 
@@ -13,7 +13,7 @@ public class CEO extends Encargado implements ObservadorCEO {
     public CEO(String nombre, String email, int legajo, ManejadorExcusa siguiente) {
         super(nombre, email, legajo);
         this.siguiente = siguiente;
-        AdministradorDeProntuarios.getInstance().registrarObservador(this);
+        AdministradorDeProntuario.getInstance().registrarObservador(this);
     }
 
 
@@ -27,7 +27,7 @@ public class CEO extends Encargado implements ObservadorCEO {
         );
 
         Prontuario prontuario = new Prontuario(excusa.getEmpleado(), this, excusa);
-        AdministradorDeProntuarios.getInstance().agregarProntuario(prontuario);
+        AdministradorDeProntuario.getInstance().agregarProntuario(prontuario);
     }
 
     @Override
