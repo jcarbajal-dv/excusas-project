@@ -7,6 +7,17 @@ public class Rechazador implements ManejadorExcusa {
 
     public Rechazador(){}
 
+    @Override
+    public void manejarExcusa(Excusa excusa) {
+        procesar(excusa);
+    }
+
+    @Override
+    public boolean puedeManejar(Excusa excusa) {
+        return true;
+    }
+
+
     public Encargado getSiguiente(){
         return null;
     }

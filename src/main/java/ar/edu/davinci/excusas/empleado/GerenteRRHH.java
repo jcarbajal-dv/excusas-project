@@ -5,7 +5,7 @@ import ar.edu.davinci.excusas.empleado.interfaces.ManejadorExcusa;
 
 public class GerenteRRHH extends Encargado {
 
-    public GerenteRRHH(String nombre, String email, int legajo, ManejadorExcusa siguiente) {
+    public GerenteRRHH(String nombre, String email, int legajo) {
         super(nombre, email, legajo);
         this.siguiente = siguiente;
     }

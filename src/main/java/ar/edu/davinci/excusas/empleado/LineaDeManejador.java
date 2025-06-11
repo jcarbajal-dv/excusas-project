@@ -5,6 +5,8 @@ import ar.edu.davinci.excusas.excusa.Excusa;
 
 public class LineaDeManejador implements ManejadorExcusa {
 
+    private Encargado recepcionista;
+
     public LineaDeManejador(){
         this.recepcionista = new Recepcionista("Lucas", "luks@excusas.org", 1),
                 new SupervisorArea("Martin", "martincito@excusas.org", 2),
