@@ -37,7 +37,16 @@ public abstract class Encargado extends Empleado implements ManejadorExcusa, IEn
             pasarExcusa(excusa);
         }
     }
+    
+    /* sacar el loop, mentira no lo soluciona per */
 
+    @Override
+    public void procesarExcusa(Excusa excusa){
+        EmailSender emailSender = new EmailSender();
+        EmailSender.enviarEmail();
+    }
+
+    
     @Override
     public boolean puedeManejar(Excusa excusa){
         return excusa.puedeSerManejadaPor(this);
